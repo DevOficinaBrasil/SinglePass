@@ -48,7 +48,7 @@ class UserController extends Controller
                 'user_id' => $data[1],
             ], 201);
         }catch(Exception $error){
-            return response()->json($error->getMessage(), 400);
+            return response()->json($error->getMessage(), 500);
         }
     }
 
