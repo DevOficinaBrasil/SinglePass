@@ -26,7 +26,7 @@ class UserRepository implements UserRepositoryInterface
         
         $payload = JWTAuth::getPayload();
 
-        return [$token, $payload->get('user_id')];
+        return [$token, $payload->get('user_id'), $payload->get('role')];
     }
 
     public function store(Request $data): array|Exception

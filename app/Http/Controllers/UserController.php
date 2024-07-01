@@ -23,8 +23,9 @@ class UserController extends Controller
             $token = $this->userRepository->signin($request);
 
             return response()->json([
-                'token' => $token[0],
+                'token'   => $token[0],
                 'user_id' => $token[1],
+                'role'    => $token[2],
             ], 200);
         }catch(Exception $error){
             return response()->json($error->getMessage(), 401);
