@@ -19,8 +19,7 @@ Route::post('/register', [UserController::class, 'create']);
 Route::get('/verify', [UserController::class, 'verify'])->middleware(EnsureTokenIsValid::class);
 
 Route::get('/bcrypt/{pass}', function (Request $request) {
-    $params = $request->all();
-    dd($params);
+    dd($request->pass);
     return response()->json(Hash::make('162867'));
 });
 
